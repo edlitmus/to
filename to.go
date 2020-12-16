@@ -280,7 +280,6 @@ func Duration(val interface{}) time.Duration {
 	default:
 		return strToDuration(String(val))
 	}
-	panic("Reached")
 }
 
 /*
@@ -504,9 +503,6 @@ func Int64(val interface{}) int64 {
 		i, _ := strconv.ParseInt(String(val), 10, 64)
 		return i
 	}
-
-	panic("Reached")
-
 }
 
 /*
@@ -549,9 +545,6 @@ func Uint64(val interface{}) uint64 {
 		i, _ := strconv.ParseUint(String(val), 10, 64)
 		return i
 	}
-
-	panic("Reached")
-
 }
 
 /*

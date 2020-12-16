@@ -378,13 +378,13 @@ func TestDate(t *testing.T) {
 
 func BenchmarkFmtIntToString(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		fmt.Sprintf("%s", 1)
+		_ = fmt.Sprintf("%v", 1)
 	}
 }
 
 func BenchmarkFmtFloatToString(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		fmt.Sprintf("%s", 1.1)
+		_ = fmt.Sprintf("%v", 1.1)
 	}
 }
 

@@ -37,11 +37,6 @@ import (
 	"time"
 )
 
-var (
-	durationType = reflect.TypeOf(time.Duration(0))
-	timeType     = reflect.TypeOf(time.Time{})
-)
-
 const (
 	digits     = "0123456789"
 	uintbuflen = 20
@@ -328,7 +323,7 @@ func Bytes(val interface{}) []byte {
 		return complex128ToBytes(complex128(t))
 
 	case bool:
-		if t == true {
+		if t {
 			return []byte("true")
 		}
 		return []byte("false")
@@ -342,8 +337,6 @@ func Bytes(val interface{}) []byte {
 	default:
 		return []byte(fmt.Sprintf("%v", val))
 	}
-
-	panic("Reached.")
 }
 
 /*
@@ -391,7 +384,7 @@ func String(val interface{}) string {
 		buf = complex128ToBytes(complex128(t))
 
 	case bool:
-		if val.(bool) == true {
+		if val.(bool) {
 			return "true"
 		}
 
@@ -491,7 +484,7 @@ func Int64(val interface{}) int64 {
 	case uint64:
 		return int64(t)
 	case bool:
-		if t == true {
+		if t {
 			return int64(1)
 		}
 		return int64(0)
@@ -537,7 +530,7 @@ func Uint64(val interface{}) uint64 {
 	case float64:
 		return uint64(t)
 	case bool:
-		if t == true {
+		if t {
 			return uint64(1)
 		}
 		return uint64(0)
@@ -579,7 +572,7 @@ func Float64(val interface{}) float64 {
 	case float64:
 		return float64(t)
 	case bool:
-		if t == true {
+		if t {
 			return float64(1)
 		}
 		return float64(0)

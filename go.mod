@@ -1,3 +1,3 @@
-module github.com/esilva-everbridge/to
+module github.com/edlitmus/to
 
-go 1.18
+go 1.20
